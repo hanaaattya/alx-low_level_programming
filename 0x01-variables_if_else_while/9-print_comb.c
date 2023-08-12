@@ -11,7 +11,7 @@ int main(void)
 
 	while (i <= '9')
 	{
-	putchar(%d, i);
+	putchar(i);
 	if (i != '9')
 	{
 	putchar(',');
