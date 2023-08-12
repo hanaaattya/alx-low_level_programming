@@ -7,11 +7,14 @@
  */
 int main(void)
 {
-	for (int i = '0'; i <= '9'; i++)
+	int i;
+	char ch;
+
+	for (i = '0'; i <= '9'; i++)
 	{
 	putchar(i);
 	}
-	for (char ch = 'a'; ch <= 'f'; ch++)
+	for (ch = 'a'; ch <= 'f'; ch++)
 	{
 	putchar(ch);
 	}
