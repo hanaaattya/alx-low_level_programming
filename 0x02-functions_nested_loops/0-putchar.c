@@ -1,11 +1,9 @@
 #include "main.h"
 
 /**
- * main.h - Entry point
+ * main - Entry point
  *
- *Description: prints _putchar using prototype function
- *
- * Return: Always 0 (success)
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
@@ -19,5 +17,4 @@ int main(void)
 	_putchar('r');
 	_putchar('\n');
 	return (0);
-
 }
