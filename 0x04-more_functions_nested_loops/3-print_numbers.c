@@ -3,9 +3,7 @@
 /**
  * print_numbers - prints  0 - 9
  *
- * @i: input int
- *
- * Return: 0
+ * Return: Always 0 (success)
  */
 void print_numbers(void)
 {
