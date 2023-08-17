@@ -2,7 +2,7 @@
 
 /**
  * print_triangle - draws triangle
- *
+ * Description: triangle draws
  * @size: triangke size
  */
 void print_triangle(int size)
