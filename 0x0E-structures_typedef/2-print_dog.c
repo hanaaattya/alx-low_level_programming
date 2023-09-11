@@ -7,7 +7,7 @@
  *
  * @d: ptr
  *
- * return: if d = null stop the code
+ * return: void
  */
 void print_dog(struct dog *d)
 {
