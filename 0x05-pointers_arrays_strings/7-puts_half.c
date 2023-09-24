@@ -17,10 +17,10 @@ void puts_half(char *str)
 	{
 	length++;
 	}
-	length++;
-	for (length /= 2 ; str[length] != '\0' ; length++)
+	int start_index = (length + 1)/2;
+	for (i = start_index ; start_index != '\0' ; i++)
 	{
-	putchar(str[length]);
+	putchar(str[i]);
 	}
 	putchar('\n');
 }
