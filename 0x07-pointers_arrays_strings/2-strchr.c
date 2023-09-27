@@ -6,9 +6,20 @@
  *@s: ptr
  *@c: var
  *
- * Return: Always 0.
+ * Return: s
  */
 char *_strchr(char *s, char c)
 {
-return(0);
+	while (*s != '\0')
+	{
+	if (*s == c)
+		return (s);
+	s++;
+
+	}
+	if (*s == '\0')
+	{
+		return (s);
+	}
+	return (0);
 }
