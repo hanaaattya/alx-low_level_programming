@@ -6,9 +6,30 @@
  *@s: ptr
  *@accept: ptr
  *
- * Return: Always 0.
+ * Return: count
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	return (0);
+	int found;
+
+	unsigned int count;
+
+	while (*s != '\0')
+	{
+	found = 0;
+	for (accept = 0; *accept != '\0'; accept++)
+	{
+	if (*s == *accept)
+	{
+		found = 1;
+	break;
+	}
+	}
+	if (found)
+		count++;
+	else
+		break;
+	s++;
+	}
+	return (count);
 }
