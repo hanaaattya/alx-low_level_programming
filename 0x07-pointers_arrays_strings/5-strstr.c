@@ -14,19 +14,20 @@ char *_strstr(char *haystack, char *needle)
 	char *needle_cpy = needle;
 	char *haystack_cpy = haystack;
 
-	if (*needle_cpy == '\0')
+	if (*needle == '\0')
 		return (haystack);
 
-	while (*haystack_cpy != '\0'){
-	while (*needle_cpy !='\0' && *haystack_cpy == *needle_cpy)
+	while (*haystack != '\0')
+	{
+	while (*needle_cpy != '\0' && *haystack == *needle_cpy)
 	{
 	needle_cpy++;
-	haystack_cpy++;
+	haystack++;
 	}
 	if (*needle_cpy == '\0')
-		return (haystack);
+		return (haystack_cpy);
 
-	haystack_cpy++;
+	haystack = haystack_cpy + 1;
 }
 	return (NULL);
 }
