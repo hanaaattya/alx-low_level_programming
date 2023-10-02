@@ -5,9 +5,9 @@
 /**
  * main -  adds positive numbers.
  * @argv: pointer
- * #argc: int
+ * @argc: int
  *
- * return: 0 or 1 if Error
+ * Return: 0 or 1 if Error
  */
 int main(int argc, char *argv[])
 {
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	return (0);
 	}
 
-	for(i = 1 ; i < argc ; i++)
+	for (i = 1 ; i < argc ; i++)
 	{
 	num = atoi(argv[i]);
 	if (num <= 0 || !isdigit(*argv[i]))

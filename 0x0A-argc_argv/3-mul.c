@@ -6,7 +6,7 @@
  * @argv: pointer
  * @argc: counter
  *
- * return: 0 or 1 if error
+ * Return: 0 or 1 if error
  */
 int main(int argc, char *argv[])
 {
