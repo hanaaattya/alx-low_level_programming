@@ -7,10 +7,10 @@
  *
  * Return: 1 if n is prime, else 0
  */
-int prime_finder(int n, int div);
+int prime_finder(int n, int divisor);
 int is_prime_number(int n)
 {
-	if (n < 2)
+	if (n <= 1)
 		return (0);
 	return (prime_finder(n, 2));
 }
@@ -22,11 +22,11 @@ int is_prime_number(int n)
  *
  * Return: 1 if n is prime, 0 otherwise
  */
-int prime_finder(int n, int div)
+int prime_finder(int n, int divisor)
 {
-	if (div * div > n)
+	if (divisor == n - 1)
 		return (1);
-	if (n % div == 0)
+	if (n % divisor == 0)
 		return (0);
-	return (prime_finder(n, div + 1));
-
+	return prime_finder(n, divisor + 1);
+}
