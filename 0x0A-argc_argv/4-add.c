@@ -24,6 +24,7 @@ int main(int argc, char *argv[])
 	for (i = 1 ; i < argc ; i++)
 	{
 	num = atoi(argv[i]);
+
 	if (num <= 0 || !isdigit(*argv[i]))
 	{
 	printf("Error\n");
@@ -31,6 +32,7 @@ int main(int argc, char *argv[])
 	}
 
 	sum += num;
+
 	}
 	printf("%d\n", sum);
 	return (0);
