@@ -27,5 +27,5 @@ char *create_array(unsigned int size, char c)
 	{
 	wanted_array[i] = c;
 	}
-	return wanted_array;
+	return (wanted_array);
 }
