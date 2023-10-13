@@ -64,11 +64,11 @@ void print_all(const char * const format, ...)
 		print_char, print_int, print_float, print_string};
 
 	va_start(argsp, format);
-	while (format && format[i])
+	for (i = 0; format && format[i]; i++)
 	{
 	int n = 0;
 
-	while (v_format[n])
+	for (n = 0; v_format[n]; n++)
 	{
 	if (format[i] == v_format[n])
 	{
@@ -76,9 +76,7 @@ void print_all(const char * const format, ...)
 	printers[n](argsp);
 	separator = ", ";
 	}
-	n++;
 	}
-	i++;
 	}
 	printf("\n");
 	va_end(argsp);
