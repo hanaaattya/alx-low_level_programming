@@ -64,19 +64,21 @@ void print_all(const char * const format, ...)
 		print_char, print_int, print_float, print_string};
 
 	va_start(argsp, format);
-	for (i = 0; format && format[i]; i++)
+	while (format && format[i])
 	{
-	int n = 0;
+	int j = 0;
 
-	for (n = 0; v_format[n]; n++)
+	while (v_format[j])
 	{
-	if (format[i] == v_format[n])
+	if (format[i] == v_format[j])
 	{
 	printf("%s", separator);
-	printers[n](argsp);
+	printers[j](argsp);
 	separator = ", ";
 	}
+	i++;
 	}
+	j++;
 	}
 	printf("\n");
 	va_end(argsp);
