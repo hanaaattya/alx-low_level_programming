@@ -56,30 +56,40 @@ void print_string(va_list argsp)
  */
 void print_all(const char * const format, ...)
 {
-	va_list argsp;
-	int i = 0;
-	char *separator = "";
-	char *v_format = "cifs";
-	void (*printers[4])(va_list) = {
-		print_char, print_int, print_float, print_string};
+	va_list args;
+	unsigned int i = 0;
+	const char *separator = "";
 
-	va_start(argsp, format);
+	va_start(args, format);
+
 	while (format && format[i])
-	{
-	int j = 0;
+{
 
-	while (v_format[j])
-	{
-	if (format[i] == v_format[j])
-	{
-	printf("%s", separator);
-	printers[j](argsp);
+	if (format[i] == 'i')
+{
+		printf("%s%d", separator, va_arg(args, int));
+}
+	else if (format[i] == 'c')
+{
+	printf("%s%c", separator, va_arg(args, int));
+}
+	else if (format[i] == 'f')
+{
+	printf("%s%f", separator, va_arg(args, double));
+}
+	else if (format[i] == 's')
+{
+	char *str = va_arg(args, char *);
+
+	if (str == NULL)
+	printf("%s(nil)", separator);
+	else
+	printf("%s%s", separator, str);
+}
 	separator = ", ";
-	}
 	i++;
-	}
-	j++;
-	}
+}
+
 	printf("\n");
-	va_end(argsp);
+	va_end(args);
 }
