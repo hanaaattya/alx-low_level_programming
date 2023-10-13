@@ -26,7 +26,7 @@ void print_char(va_list argsp)
  */
 void print_float(va_list argsp)
 {
-	printf("%f", va_arg(argsp, double));
+	printf("%f", (double)va_arg(argsp, double));
 }
 
 /**
