@@ -3,19 +3,22 @@
 #include <stdio.h>
 
 int main(int argc, char *argv[])
-{
+{;
 	int num_1, num_2, result;
+	char *operator;
 
-	int (*operation)(int, int);
 	if (argc != 4)
 	{
 	printf("Error\n");
 	return (98);
 	}
+
 	num_1 = atoi(argv[1]);
+	*operator = argv[2];
 	num_2 = atoi(argv[3]);
 
-	operation = get_op_func(argv[2]);
+	int (*operation)(int, int) = get_op_func(operator);
+
 	if (operation == NULL)
 	{
 	printf("Error\n");
