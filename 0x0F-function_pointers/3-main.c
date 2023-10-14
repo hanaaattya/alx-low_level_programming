@@ -4,18 +4,16 @@
 
 int main(int argc, char *argv[])
 {
-	int num_1;
-	int num_2; 
-	int result;
-	num_1 = atoi(argv[1]);
-	char *operator = argv[2];
-	num_2 = atoi(argv[3]);
-
 	if (argc != 4)
 	{
 	printf("Error\n");
 	return (98);
 	}
+
+	int result;
+	int num_1 = atoi(argv[1]);
+	char *operator = argv[2];
+	int num_2 = atoi(argv[3]);
 
 	int (*operation)(int, int) = get_op_func(operator);
 
