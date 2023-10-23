@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * print_list - Prints all the elements of the structure list_t
+ * print_list - Prints all the elements of list_t
  * @h: ptr to the head of the list
  * Return: The num of nodes
  */
