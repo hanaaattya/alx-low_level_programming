@@ -9,6 +9,10 @@ void free_listint2(listint_t **head)
 {
 	listint_t *find_last;
 
+	if (head == NULL || *head == NULL)
+	{
+	return (void);
+	}
 	while (*head != NULL)
 	{
 	find_last = *head;
