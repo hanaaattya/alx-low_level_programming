@@ -8,6 +8,7 @@
 void free_listint2(listint_t **head)
 {
 	listint_t *find_last;
+
 	while (*head != NULL)
 	{
 	find_last = *head;
