@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * get_bit - Returns the value of a bit at a given index
- * @n: num from which to get the bit
+ * get_bit - Returns the value of a bit
+ * @n: num to get the bit
  * @index: index of the bit to retrieve
  * Return: value of the bit at the specified index or -1 if error
  */
