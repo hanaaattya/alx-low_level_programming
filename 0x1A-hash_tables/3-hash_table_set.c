@@ -38,7 +38,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 
 	new_hash_node = malloc(sizeof(hash_node_t));
-	if (ne_hashw_node == NULL)
+	if (new_hash_node == NULL)
 	{
 		return (0);
 	}
@@ -48,7 +48,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (new_hash_node->value == NULL || new_hash_node->key == NULL)
 	{
 		free(new_hash_node->key);
-		free(new_node->value);
+		free(new_hash_node->value);
 		free(new_hash_node);
 		return (0);
 	}
