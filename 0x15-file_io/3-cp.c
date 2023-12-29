@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSIONS);
 	if (fd_to == -1)
 	{
-		dprintf(STDERR_FILENO, NOWRITE_ERR, argv[2]), exit(99);;
+		dprintf(STDERR_FILENO, NOWRITE_ERR, argv[2]), exit(99);
 	}
 
 	read_bytes = read(from_fd, buffer, 1024);
