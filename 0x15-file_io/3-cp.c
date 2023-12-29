@@ -50,11 +50,13 @@ int main(int argc, char *argv[])
 	{
 		dprintf(STDERR_FILENO, NOREAD_ERR, argv[1]), exit(98);
 	}
-	if (close(from_fd) == -1)
+	from_fd = close(from_fd);
+	if (from_fd)
 	{
 	dprintf(STDERR_FILENO, NOCLOSE_ERR, from_fd), exit(100);
 	}
-	if (close(fd_to) == -1)
+	fd_to = close(fd_to);
+	if (fd_to)
 	{
 	dprintf(STDERR_FILENO, NOCLOSE_ERR, from_fd), exit(100);
 	}
