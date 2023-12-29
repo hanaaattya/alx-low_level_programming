@@ -39,7 +39,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (text_content != NULL)
 	{
 		write_appended_text = write(fd, text_content, _strlen(text_content));
-		if(write_appended_text == -1)
+		if (write_appended_text == -1)
 		{
 		close(fd);
 		return (-1);
