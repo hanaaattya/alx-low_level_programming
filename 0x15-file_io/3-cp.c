@@ -6,7 +6,7 @@
 #define NOREAD_ERR "Error: Can't read from file %s\n"
 #define NOWRITE_ERR "Error: Can't write to file %s\n"
 #define NOCLOSE_ERR "Error: Can't close fd %d\n"
-
+#define PERMISSIONS (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
 /**
  * main - The main function
  * @argc: The number of arguments passed to the program
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	{
 		dprintf(STDERR_FILENO, NOREAD_ERR, argv[1]), exit(98);
 	}
-	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSIONS);
 	if (fd_to == -1)
 	{
 		dprintf(STDERR_FILENO, NOWRITE_ERR, argv[2]), exit(99);;
