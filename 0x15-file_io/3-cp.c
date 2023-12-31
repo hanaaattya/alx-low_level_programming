@@ -2,6 +2,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <fcntl.h>
+#define SIZE 1024
 #define PERMISSIONS (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
 /**
  * main - The main function
@@ -12,7 +13,7 @@
  */
 int main(int argc, char *argv[])
 {
-	char buffer[1024];
+	char buffer[SIZE];
 	int from_fd;
 	int fd_to;
 	ssize_t read_bytes;
@@ -33,7 +34,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 	}
 
-	read_bytes = read(from_fd, buffer, 1024);
+	read_bytes = read(from_fd, buffer, SIZE);
 	while (read_bytes > 0)
 	{
 	write_bytes = write(fd_to, buffer, read_bytes);
